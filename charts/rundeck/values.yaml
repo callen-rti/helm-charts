@@ -16,15 +16,7 @@ executionLogs:
     accessMode: ReadWriteOnce
     size: 1G
 
-data:
-  claim:
-    enabled: true
-    # required - set this
-    storageClass:
-    accessMode: ReadWriteOnce
-    size: 1G
-
-addons:
+server:
   claim:
     enabled: true
     # required - set this

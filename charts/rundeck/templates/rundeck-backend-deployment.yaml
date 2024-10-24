@@ -86,13 +86,9 @@ spec:
           - name: {{ $fullName }}-execution-logs
             mountPath: /home/rundeck/var/logs/rundeck/
           {{- end }}
-          {{- if .Values.data.claim.enabled }}
-          - name: {{ $fullName }}-data
-            mountPath: /home/rundeck/server/data
-          {{- end }}
-          {{- if .Values.addons.claim.enabled }}
-          - name: {{ $fullName }}-addons
-            mountPath: /home/rundeck/server/addons
+          {{- if .Values.server.claim.enabled }}
+          - name: {{ $fullName }}-server
+            mountPath: /home/rundeck/server
           {{- end }}
           {{- if .Values.plugins.claim.enabled }}
           - name: {{ $fullName }}-plugins
