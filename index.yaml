@@ -545,10 +545,10 @@ entries:
     - operations
     name: rundeck
     sources:
-    - https://github.com/EugenMayer/helm-charts/tree/main/charts/rundeck
+    - https://github.com/callen-rti/helm-charts/tree/main/charts/rundeck
     - https://github.com/rundeck/rundeck
     urls:
-    - https://github.com/EugenMayer/helm-charts/releases/download/rundeck-2.7.0/rundeck-2.7.0.tgz
+    - https://github.com/callen-rti/helm-charts/releases/download/rundeck-2.7.0/rundeck-2.7.0.tgz
     version: 2.7.0
   - apiVersion: v2
     appVersion: 5.6.1
