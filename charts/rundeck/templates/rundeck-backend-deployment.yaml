@@ -162,12 +162,12 @@ spec:
 
       securityContext:
       {{- toYaml .Values.securityContext | nindent 8 }}
-      
+
       {{- if .Values.image.pullSecrets }}
       imagePullSecrets:
         - name: {{ .Values.image.pullSecrets }}
       {{- end }}
-      
+
       serviceAccountName: {{ include "rundeck.serviceAccountName" . }}
 
       volumes:
@@ -179,21 +179,16 @@ spec:
           persistentVolumeClaim:
             claimName: {{ $fullName }}-execution-logs-claim
         {{- end }}
-        {{- if .Values.data.claim.enabled }}
-        - name: {{ $fullName }}-data
+        {{- if .Values.server.claim.enabled }}
+        - name: {{ $fullName }}-server
           persistentVolumeClaim:
-            claimName: {{ $fullName }}-data-claim
-        {{- end }}  
+            claimName: {{ $fullName }}-server-claim
+        {{- end }}
         {{- if .Values.plugins.claim.enabled }}
         - name: {{ $fullName }}-plugins
           persistentVolumeClaim:
             claimName: {{ $fullName }}-plugins-claim
-        {{- end }}  
-        {{- if .Values.addons.claim.enabled }}
-        - name: {{ $fullName }}-addons
-          persistentVolumeClaim:
-            claimName: {{ $fullName }}-addons-claim
-        {{- end }}          
+        {{- end }}
         {{- if .Values.rundeck.sshSecrets }}
         - name: sshkeys
           secret:
