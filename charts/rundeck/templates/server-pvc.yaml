@@ -6,7 +6,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{ $fullName }}-data-claim
+  name: {{ $fullName }}-server-claim
   labels: {{ $labels | indent 4 }}
 spec:
   {{- if .storageClass }}
